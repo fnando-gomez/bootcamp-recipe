@@ -12,16 +12,19 @@ server.get('/sanity',function(req,res){
 
 //Accesing the API
 server.get ('/recipes/:ingredient',(req,res) => {
-    request('https://recipes-goodness.herokuapp.com/recipes/YOUR_INGREDIENT', function (error, response, body){
-        let reqData = JSON.parse(body)
+    request(`https://recipes-goodness.herokuapp.com/recipes/${req.params}`, function (error, response, body){
+        let data = JSON.parse(body)
         let recipeData = req.params
-        console.log(`Recipe:${recipeData.ingredient}`)
+        console.log(`Ingredient:${recipeData.ingredient}`)
 
-        console.log(reqData)
+        
+        
 
 
-        res.send("testing")
+       res.send(data)
     })
+
+
 
 
 
