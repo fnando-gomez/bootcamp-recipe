@@ -9,12 +9,34 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        
+        <h2>Recipe app</h2>
 
+            <div id="container"> </div>
         
-        <script src = "/node_modules/jquery/dist/jquery.js"></script>
-        <script src = "/node_modules/handlebars/dist/handlebars.js"></script>
         
+        
+        
+        <script src = "/jquery/dist/jquery.js"></script>//Don't use "./node_modules" at the beginning because I'm serving it from the server
+        <script src = "/handlebars/dist/handlebars.js"></script>
+        <script src= "render.js"></script>
         <script src = "main.js" > </script>
-
     </body>
+
+    <script id="recipes-template" type= "text/x-handlebars-template">
+        {{#each realData}}
+        <div> <a href="{{href}}"> {{title}} </a> </div>
+        <img src= {{thumbnail}}>
+        <p>Ingredients</p>
+        <ul id= "gridient"> 
+            {{#each ingredients}}
+            <li>{this}</li>
+            {{/each}}
+        </ul>
+        {{/each}}
+
+    
+    </script>
+
+
 </html>
