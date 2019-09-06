@@ -6,4 +6,4 @@ class Renderer {
         let newHTML = template({ realData })
         $('#container').empty().append(newHTML)
     }
-}
+} 
