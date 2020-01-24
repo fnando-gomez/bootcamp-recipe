@@ -1,4 +1,3 @@
-
 const express = require('express')
 const server = express()
 const request = require('request')
@@ -32,8 +31,7 @@ server.get('/recipes/:ingredient', (req, res) => {
                 href: r.href,
             }
         })
-        res.send(realData)//Why this should be inside the request?? Ask Hunter
-        // console.log(path.join(__dirname,`/node_modules`))
+        res.send(realData)
     })
 })
 server.listen(port, () => console.log(`Server running on http://localhost:${port}`))

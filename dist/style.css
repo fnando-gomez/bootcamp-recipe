@@ -1,8 +1,7 @@
-/* 
+
 #recipes-template {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr)
-} */
+    display: flex;
+}
 
 /* #recipe{
     display: grid;
